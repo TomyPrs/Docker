@@ -1,12 +1,5 @@
 FROM alpine:edge
 
-
-# LABEL
-
-LABEL org.opencontainers.image.source="https://github.com/amirulandalib/mltb-alpine-docker"
-LABEL org.opencontainers.image.description="Docker for MLTB by Anasty based on Alpine EDGE docker image"
-
-
 ARG TARGETPLATFORM BUILDPLATFORM
 
 # Setup Working Directory
@@ -83,6 +76,7 @@ RUN echo -e "\e[32m[INFO]: Building and Installing MegaSdkC++.\e[0m" && \
 RUN echo -e "\e[32m[INFO]: Running Final Apk Update.\e[0m" && \
     sudo apk update && apk upgrade
 
+RUN pip3 install playwright
 
 # Setup Language Environments
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
