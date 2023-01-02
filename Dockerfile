@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.9
 
 ARG TARGETPLATFORM BUILDPLATFORM
 # Setup Working Directory
@@ -16,7 +16,7 @@ ENV TZ Asia/Jakarta
 RUN echo -e "\e[32m[INFO]: Installing basic packages.\e[0m" && \
     apk update && apk upgrade && \
     apk add --upgrade --no-cache \
-    sudo py3-wheel musl-dev musl python3=~3.8 \
+    sudo py3-wheel musl-dev musl \
     python3-dev busybox musl-locales github-cli lshw \
     qbittorrent-nox py3-pip py3-lxml aria2 p7zip \
     xz curl pv jq ffmpeg parallel \
