@@ -1,7 +1,6 @@
-FROM alpine:edge
+FROM python
 
 ARG TARGETPLATFORM BUILDPLATFORM
-
 # Setup Working Directory
 
 WORKDIR /usr/src/app
@@ -9,7 +8,7 @@ RUN chmod -R 777 /usr/src/app && \
     chmod -R +x /usr/src/app && \
     chmod -R 705 /usr/src/app
 
-ENV TZ Asia/Dhaka
+ENV TZ Asia/Jakarta 
 
 
 # Installing basic packages
@@ -17,7 +16,7 @@ ENV TZ Asia/Dhaka
 RUN echo -e "\e[32m[INFO]: Installing basic packages.\e[0m" && \
     apk update && apk upgrade && \
     apk add --upgrade --no-cache \
-    sudo py3-wheel musl-dev musl python3 \
+    sudo py3-wheel musl-dev musl python3=~3.8 \
     python3-dev busybox musl-locales github-cli lshw \
     qbittorrent-nox py3-pip py3-lxml aria2 p7zip \
     xz curl pv jq ffmpeg parallel \
