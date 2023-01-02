@@ -1,4 +1,4 @@
-FROM python
+FROM alpine:edge
 
 ARG TARGETPLATFORM BUILDPLATFORM
 # Setup Working Directory
