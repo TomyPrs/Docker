@@ -75,7 +75,7 @@ RUN echo -e "\e[32m[INFO]: Building and Installing MegaSdkC++.\e[0m" && \
 RUN echo -e "\e[32m[INFO]: Running Final Apk Update.\e[0m" && \
     sudo apk update && apk upgrade
 
-RUN pip3 install -U pip && pip3 install playwright
+RUN pip3 install -U pip
 
 # Setup Language Environments
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
